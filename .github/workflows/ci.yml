@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  build:
+    name: ${{ matrix.os }} / ${{ matrix.cc }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        cc: [gcc, clang]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build examples (warnings as errors)
+        run: make CC=${{ matrix.cc }} CFLAGS="-std=c99 -Wall -Wextra -Werror -pedantic -I."
+
+      - name: Run collision test suite
+        run: ./build/collision_demo
+
+      - name: Run camera demo
+        run: ./build/camera_demo
+
+      - name: Run pong
+        run: ./build/pong
+
+      - name: Verify double-precision build compiles
+        run: |
+          ${{ matrix.cc }} -std=c99 -Wall -Wextra -Werror -pedantic -DCOREX_USE_DOUBLE=1 \
+            -I. examples/collision_demo.c -o collision_double -lm
+          ./collision_double
+
+  msvc:
+    name: windows / msvc
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ilammy/msvc-dev-cmd@v1
+      - name: Build and run with cl
+        shell: cmd
+        run: |
+          cl /W4 /WX /I. examples\collision_demo.c /Fe:collision_demo.exe
+          collision_demo.exe
