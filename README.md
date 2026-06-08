@@ -71,8 +71,7 @@ int main(void) {
 | **Camera** | `camera2d_view`, `world_to_screen`, `screen_to_world` (exact inverse) |
 | **Utility** | `clamp`, `lerp`, `inverse_lerp`, `smoothstep`, `deg_to_rad`, `rad_to_deg` |
 
-Full reference: [`docs/api_reference.md`](docs/api_reference.md).
-Design notes and conventions: [`docs/design.md`](docs/design.md).
+See [Documentation](#documentation) below.
 
 ## Configuration
 
@@ -84,6 +83,14 @@ Define these before including the implementation:
 | `COREX_STATIC` | _unset_ | Give all functions `static` linkage. |
 | `COREX_ASSERT(x)` | `assert(x)` | Override the assertion hook. |
 | `COREX_MALLOC` / `COREX_FREE` | `malloc`/`free` | Allocation hooks (reserved for higher layers). |
+
+## Documentation
+
+| Document | Purpose |
+| --- | --- |
+| [`docs/building_on_corex.md`](docs/building_on_corex.md) | **Integration guide** — scene graphs, renderer binding, physics, recipes |
+| [`docs/api_reference.md`](docs/api_reference.md) | Complete function and type reference |
+| [`docs/design.md`](docs/design.md) | Design goals, matrix conventions, configuration |
 
 ## Examples
 
