@@ -11,7 +11,7 @@ CFLAGS  ?= -std=c99 -Wall -Wextra -I.
 LDFLAGS ?= -lm
 BUILD   := build
 
-EXAMPLES := pong camera_demo collision_demo
+EXAMPLES := pong camera_demo collision_demo impl_guard_test
 BINS     := $(addprefix $(BUILD)/,$(EXAMPLES))
 
 .PHONY: all run clean

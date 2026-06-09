@@ -239,6 +239,9 @@ COREX_DEF vec2 camera2d_screen_to_world(camera2d c, vec2 p);
 
 #ifdef COREX_IMPLEMENTATION
 
+#ifndef COREX_IMPLEMENTATION_INCLUDED
+#define COREX_IMPLEMENTATION_INCLUDED
+
 #include <math.h>
 
 /* Precision-aware math primitives. */
@@ -554,4 +557,5 @@ vec2 camera2d_screen_to_world(camera2d c, vec2 p)
 } /* extern "C" */
 #endif
 
+#endif /* COREX_IMPLEMENTATION_INCLUDED */
 #endif /* COREX_IMPLEMENTATION */

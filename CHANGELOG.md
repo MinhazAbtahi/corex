@@ -6,6 +6,18 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- Guard the `COREX_IMPLEMENTATION` block with `COREX_IMPLEMENTATION_INCLUDED`
+  so function bodies are emitted at most once per translation unit when
+  `corex.h` is included multiple times with `COREX_IMPLEMENTATION` defined
+  (e.g. when a dependent single-header library includes corex transitively).
+
+### Added
+
+- `examples/impl_guard_test.c` regression test; wired into `Makefile`,
+  `build.bat`, and CI.
+
 ## [1.0.0] - 2026-06-08
 
 ### Added

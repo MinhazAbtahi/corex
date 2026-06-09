@@ -29,6 +29,9 @@ jobs:
       - name: Run pong
         run: ./build/pong
 
+      - name: Run implementation guard regression test
+        run: ./build/impl_guard_test
+
       - name: Verify double-precision build compiles
         run: |
           ${{ matrix.cc }} -std=c99 -Wall -Wextra -Werror -pedantic -DCOREX_USE_DOUBLE=1 \
@@ -46,3 +49,5 @@ jobs:
         run: |
           cl /W4 /WX /I. examples\collision_demo.c /Fe:collision_demo.exe
           collision_demo.exe
+          cl /W4 /WX /I. examples\impl_guard_test.c /Fe:impl_guard_test.exe
+          impl_guard_test.exe

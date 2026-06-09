@@ -19,7 +19,7 @@ if "%~1"=="clean" (
 
 if not exist "%OUT%" mkdir "%OUT%"
 
-set EXAMPLES=pong camera_demo collision_demo
+set EXAMPLES=pong camera_demo collision_demo impl_guard_test
 
 for %%E in (%EXAMPLES%) do (
     echo [build] %%E
