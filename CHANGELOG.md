@@ -6,6 +6,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-06-08
+
 ### Fixed
 
 - Guard the `COREX_IMPLEMENTATION` block with `COREX_IMPLEMENTATION_INCLUDED`
@@ -42,5 +44,6 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Examples: `pong`, `camera_demo`, `collision_demo`.
 - Documentation: `docs/design.md`, `docs/api_reference.md`.
 
-[Unreleased]: https://github.com/MinhazAbtahi/corex/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/MinhazAbtahi/corex/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/MinhazAbtahi/corex/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/MinhazAbtahi/corex/releases/tag/v1.0.0

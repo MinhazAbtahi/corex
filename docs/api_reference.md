@@ -1,6 +1,6 @@
 # corex — API Reference
 
-Version 1.0.0. All functions use `corex_real`, which is `float` by default or
+Version 1.0.1. All functions use `corex_real`, which is `float` by default or
 `double` when `COREX_USE_DOUBLE` is set to `1`.
 
 ```c
@@ -15,7 +15,7 @@ Version 1.0.0. All functions use `corex_real`, which is `float` by default or
 | `COREX_PI` | 3.14159265358979323846 |
 | `COREX_TAU` | 6.28318530717958647692 |
 | `COREX_EPSILON` | 0.00001 |
-| `COREX_VERSION_MAJOR` / `MINOR` / `PATCH` | `1` / `0` / `0` |
+| `COREX_VERSION_MAJOR` / `MINOR` / `PATCH` | `1` / `0` / `1` |
 
 ## Types
 
